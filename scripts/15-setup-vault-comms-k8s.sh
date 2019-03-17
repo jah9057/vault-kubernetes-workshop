@@ -30,6 +30,7 @@ K8S_HOST="$(kubectl config view --raw \
 K8S_CACERT="$(kubectl config view --raw \
   -o go-template="{{ range .clusters }}{{ if eq .name \"${CLUSTER_NAME}\" }}{{ index .cluster \"certificate-authority-data\" }}{{ end }}{{ end }}" | base64 --decode)"
 
+# This also needs an idempotency check?  Got a path already  in use error.
 # Enable the Kubernetes auth method
 vault auth enable kubernetes
 

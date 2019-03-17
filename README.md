@@ -370,7 +370,7 @@ application that just reads the contents of `/etc/secrets/config` repeatedly.
 bash ./scripts/17-run-kv-sidecar.sh
 ```
 
-## 18 Setup Dynamic Credentials
+## 18 Create Cloud MySQL
 
 Next we configure Vault to generate dynamic credentials. Vault can generate many
 types of dynamic credentials like database credentials, certificates, etc. For
@@ -378,12 +378,21 @@ this example, we will leverage the GCP secrets engine to dynamically generate
 Google Cloud Platform CloudSQL MySQL users.
 
 ```text
-bash ./18-setup-dynamic-creds.sh
+bash ./18-create-cloudsql.sh
+```
+
+This will create the CloudSQL database. This operation can take awhile, and may produce some output to allow you to monitor the completion of the operation.
+
+
+## 19 Setup Dynamic Credentials
+
+After the CloudSQL databse is setup, we will configure the dynamic secrets.
+
+```text
+bash ./19-setup-dynamic-creds.sh
 ```
 
 This will:
-
-1. Create a CloudSQL database
 
 1. Enable the `database` secrets engine
 
@@ -396,7 +405,7 @@ This will:
 1. Update the Vault Kubernetes auth mapping to include this new policy when
 authenticating
 
-## 19 Sidecar Dynamic App
+## 20 Run Database Sidecar
 
 In this example, we follow the same pattern as the static KV secrets, but our sidecar application will pull dynamic credentials from Vault. In this case, we will be pulling a Google Cloud Platform Service Account, but this could be a database password or other dynamically generated credential.
 

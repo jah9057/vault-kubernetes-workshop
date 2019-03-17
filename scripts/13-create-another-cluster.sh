@@ -10,11 +10,10 @@ ZONE="us-west1-b"
 
 # Create a cluster with alpha features so we can do process namespace sharing
 gcloud container clusters create my-apps \
-  --cluster-version 1.10.2-gke.3 \
+  --cluster-version 1.12.5-gke.5 \
   --enable-cloud-logging \
   --enable-cloud-monitoring \
   --machine-type n1-standard-2 \
-  --enable-kubernetes-alpha \
   --num-nodes 3 \
   --scopes "cloud-platform" \
   --zone "${ZONE}"

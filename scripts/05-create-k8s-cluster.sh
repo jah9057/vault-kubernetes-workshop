@@ -12,7 +12,7 @@ SERVICE_ACCOUNT="vault-server@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com"
 
 gcloud container clusters create vault \
   --enable-autorepair \
-  --cluster-version 1.10.2-gke.3 \
+  --cluster-version 1.12.5-gke.5 \
   --enable-cloud-logging \
   --enable-cloud-monitoring \
   --machine-type n1-standard-2 \
