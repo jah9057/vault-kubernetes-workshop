@@ -11,7 +11,7 @@ ZONE="us-west1-b"
 SERVICE_ACCOUNT="vault-server@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com"
 
 kubectl delete pod --force --grace-period=0 kv-sidecar
-kubectl delete pod --force --grace-period=0 sa-sidecar
+kubectl delete pod --force --grace-period=0 db-sidecar
 
 gcloud container clusters delete my-apps \
   --async \
@@ -35,6 +35,9 @@ gcloud compute addresses delete vault \
 
 gcloud iam service-accounts delete "${SERVICE_ACCOUNT}" \
   --quiet
+
+gcloud sql instances delete my-instance-2
+    --async
 
 gsutil -m rm -rf "gs://${GOOGLE_CLOUD_PROJECT}-vault-storage"
 gsutil rb -f "gs://${GOOGLE_CLOUD_PROJECT}-vault-storage"

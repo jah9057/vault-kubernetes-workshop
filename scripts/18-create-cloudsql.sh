@@ -6,8 +6,9 @@ if [ -z "${GOOGLE_CLOUD_PROJECT}" ]; then
   exit 1
 fi
 
-gcloud sql instances create my-instance-1 \
+gcloud sql instances create my-instance-2 \
     --database-version MYSQL_5_7 \
     --tier db-f1-micro \
     --region us-east1 \
-    --authorized-networks 0.0.0.0/0
+    --authorized-networks 0.0.0.0/0 \
+    --async

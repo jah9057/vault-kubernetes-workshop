@@ -6,7 +6,7 @@ INSTANCE_IP="$(gcloud sql instances describe my-instance-1 --format 'value(ipAdd
 # Change password
 gcloud sql users set-password root \
     --host % \
-    --instance my-instance-1 \
+    --instance my-instance-2 \
     --password my-password
 
 # Enable the gcp secrets engine
