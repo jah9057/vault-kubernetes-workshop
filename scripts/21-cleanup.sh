@@ -6,8 +6,8 @@ if [ -z "${GOOGLE_CLOUD_PROJECT}" ]; then
   exit 1
 fi
 
-REGION="us-west1"
-ZONE="us-west1-b"
+REGION="us-central1"
+ZONE="us-central1-b"
 SERVICE_ACCOUNT="vault-server@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com"
 
 kubectl delete pod --force --grace-period=0 kv-sidecar

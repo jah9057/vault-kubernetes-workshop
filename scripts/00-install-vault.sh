@@ -49,7 +49,7 @@ rm hashicorp.asc
 rm hashicorp.trust
 
 NAME="vault"
-VERSION="0.10.2"
+VERSION="1.1.2"
 DOWNLOAD_ROOT="https://releases.hashicorp.com/${NAME}/${VERSION}/${NAME}_${VERSION}"
 DOWNLOAD_ZIP="${DOWNLOAD_ROOT}_linux_amd64.zip"
 DOWNLOAD_SHA="${DOWNLOAD_ROOT}_SHA256SUMS"

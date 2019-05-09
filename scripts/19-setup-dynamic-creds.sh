@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-INSTANCE_IP="$(gcloud sql instances describe my-instance-1 --format 'value(ipAddresses[0].ipAddress)')"
+INSTANCE_IP="$(gcloud sql instances describe my-instance-2 --format 'value(ipAddresses[0].ipAddress)')"
 
 # Change password
 gcloud sql users set-password root \

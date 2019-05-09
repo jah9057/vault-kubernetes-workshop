@@ -6,13 +6,13 @@ if [ -z "${GOOGLE_CLOUD_PROJECT}" ]; then
   exit 1
 fi
 
-ZONE="us-west1-b"
+ZONE="us-central1-b"
 
 SERVICE_ACCOUNT="vault-server@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com"
 
 gcloud container clusters create vault \
   --enable-autorepair \
-  --cluster-version 1.12.5-gke.5 \
+  --cluster-version 1.12.7-gke.10 \
   --enable-cloud-logging \
   --enable-cloud-monitoring \
   --machine-type n1-standard-2 \

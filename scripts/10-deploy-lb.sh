@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-REGION="us-west1"
+REGION="us-central1"
 
 LB_IP="$(gcloud compute addresses describe vault --region ${REGION} --format 'value(address)')"
 

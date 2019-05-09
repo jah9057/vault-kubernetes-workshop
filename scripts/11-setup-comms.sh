@@ -6,7 +6,7 @@ if [ -z "${GOOGLE_CLOUD_PROJECT}" ]; then
   exit 1
 fi
 
-REGION="us-west1"
+REGION="us-central1"
 
 LB_IP="$(gcloud compute addresses describe vault --region ${REGION} --format 'value(address)')"
 GCS_BUCKET="${GOOGLE_CLOUD_PROJECT}-vault-storage"
