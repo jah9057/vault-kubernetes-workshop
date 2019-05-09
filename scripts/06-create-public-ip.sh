@@ -6,6 +6,6 @@ if [ -z "${GOOGLE_CLOUD_PROJECT}" ]; then
   exit 1
 fi
 
-REGION="us-west1"
+REGION="us-central1"
 
 gcloud compute addresses create vault --region "${REGION}"

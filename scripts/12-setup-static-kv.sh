@@ -13,6 +13,6 @@ EOH
 # This stores a static credential at secrets/myapp/config with a username and
 # password for connecting to our myapp application.
 vault kv put secret/myapp/config \
-  ttl="30s" \
+  ttl="30m" \
   username="appuser" \
   password="suP3rsec(et!"
